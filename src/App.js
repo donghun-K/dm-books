@@ -32,9 +32,9 @@ function App() {
 function Book(props) {
   return (
     <Col sm>
-      <img src='' alt='' className='book-img' />
-      <h4 className='book-name'>book</h4>
-      <p className='book-description'>상품설명</p>
+      <img src={props.book['src']} alt='' className='book-img' />
+      <h4 className='book-name'>{props.book['title']}</h4>
+      <p className='book-description'>{props.book['content']}</p>
     </Col>
   );
 }
