@@ -20,39 +20,23 @@ function App() {
       <div className='main-banner'></div>
       <Container className='book-container'>
         <Row className='book-row'>
-          <Col sm>
-            <img
-              src='http://image.yes24.com/goods/109711067/XL'
-              alt=''
-              className='book-img'
-            />
-            <h4 className='book-name'>상품명</h4>
-            <p className='book-description'>상품설명</p>
-          </Col>
-          <Col sm>
-            <img
-              src='http://image.yes24.com/goods/91433923/XL'
-              alt=''
-              className='book-img'
-            />
-            <h4 className='book-name'>상품명</h4>
-            <p className='book-description'>상품설명</p>
-          </Col>
-          <Col sm>
-            <img
-              src='http://image.yes24.com/goods/107490270/XL'
-              alt=''
-              className='book-img'
-            />
-            <h4 className='book-name'>상품명</h4>
-            <p className='book-description'>상품설명</p>
-          </Col>
+          {books.map((book, i) => {
+            return <Book book={book} i={i} />;
+          })}
         </Row>
       </Container>
     </div>
   );
 }
 
-function Book() {}
+function Book(props) {
+  return (
+    <Col sm>
+      <img src='' alt='' className='book-img' />
+      <h4 className='book-name'>book</h4>
+      <p className='book-description'>상품설명</p>
+    </Col>
+  );
+}
 
 export default App;
