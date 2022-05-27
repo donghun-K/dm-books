@@ -20,8 +20,8 @@ function App() {
       <div className='main-banner'></div>
       <Container className='book-container'>
         <Row className='book-row'>
-          {books.map((book, i) => {
-            return <Book book={book} i={i} />;
+          {books.map((book) => {
+            return <Card book={book} />;
           })}
         </Row>
       </Container>
@@ -29,7 +29,7 @@ function App() {
   );
 }
 
-function Book(props) {
+function Card(props) {
   return (
     <Col sm>
       <img src={props.book['src']} alt='' className='book-img' />
