@@ -1,6 +1,7 @@
 import './App.css';
 import { Col, Row, Navbar, Container, Nav } from 'react-bootstrap';
 import { useState } from 'react';
+import data from './data.js';
 
 function App() {
   return (
