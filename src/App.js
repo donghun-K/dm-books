@@ -13,19 +13,29 @@ function App() {
           <Navbar.Brand href='#home'>DM BOOKS</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#features'>Features</Nav.Link>
-            <Nav.Link href='#pricing'>Pricing</Nav.Link>
+            <Nav.Link href='#features'>About</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      <div className='main-banner'></div>
-      <Container className='book-container'>
-        <Row className='book-row'>
-          {books.map((book) => {
-            return <Card book={book} />;
-          })}
-        </Row>
-      </Container>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <div className='main-banner'></div>
+              <Container className='book-container'>
+                <Row className='book-row'>
+                  {books.map((book) => {
+                    return <Card book={book} />;
+                  })}
+                </Row>
+              </Container>
+            </>
+          }
+        />
+        <Route path='/detail' element={<div>디테일</div>} />
+        <Route path='/about' element={<div>어바웃페이지</div>} />
+      </Routes>
     </div>
   );
 }
