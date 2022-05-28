@@ -24,10 +24,10 @@ function App() {
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate('/detail');
+                navigate('/event');
               }}
             >
-              Detail
+              Event
             </Nav.Link>
           </Nav>
         </Container>
@@ -40,8 +40,8 @@ function App() {
               <div className='main-banner'></div>
               <Container className='book-container'>
                 <Row className='book-row'>
-                  {books.map((book) => {
-                    return <Card book={book} />;
+                  {books.map((book, i) => {
+                    return <Card book={book} key={i} />;
                   })}
                 </Row>
               </Container>
@@ -49,6 +49,22 @@ function App() {
           }
         />
         <Route path='/detail' element={<Detail />} />
+        <Route
+          path='/event'
+          element={
+            <div>
+              <h1>오늘의 이벤트</h1>
+              <Outlet />
+            </div>
+          }
+        >
+          <Route path='one' element={<p>1만원 이상 주문 시 배송비 무료!</p>} />
+          <Route
+            path='two'
+            element={<p>네이버페이로 결제 시 2000원 페이백!</p>}
+          />
+        </Route>
+        {/* 404 page */}
         <Route path='*' element={<div>404!</div>} />
       </Routes>
     </div>
