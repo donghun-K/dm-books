@@ -13,7 +13,7 @@ function App() {
     <div className='App'>
       <Navbar bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='#home'>DM BOOKS</Navbar.Brand>
+          <Navbar.Brand href='/'>DM BOOKS</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link
               onClick={() => {
@@ -48,7 +48,9 @@ function App() {
             </>
           }
         />
-        <Route path='/detail' element={<Detail />} />
+        {/* url parameter */}
+        <Route path='/detail/:id' element={<Detail books={books} />} />
+        {/* nested route */}
         <Route
           path='/event'
           element={

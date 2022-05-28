@@ -1,6 +1,11 @@
 import { Col, Row, Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
-function Detail() {
+function Detail(props) {
+  let { id } = useParams();
+  let book = props.books.find((book) => {
+    return book.id === Number(id);
+  });
   return (
     <Container>
       <Row>
@@ -12,9 +17,9 @@ function Detail() {
           />
         </Col>
         <Col md='6'>
-          <h4>상품명</h4>
-          <p>상품설명</p>
-          <p>10000원</p>
+          <h4>{book.title}</h4>
+          <p>{book.content}</p>
+          <p>{book.price}</p>
           <button className='btn btn-danger'>주문하기</button>
         </Col>
       </Row>
