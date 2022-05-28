@@ -2,7 +2,7 @@ import './App.css';
 import { Row, Navbar, Container, Nav } from 'react-bootstrap';
 import { useState } from 'react';
 import data from './data.js';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './routes/Detail.js';
 import Card from './components/Card.js';
 
@@ -49,6 +49,7 @@ function App() {
           }
         />
         <Route path='/detail' element={<Detail />} />
+        <Route path='*' element={<div>404!</div>} />
       </Routes>
     </div>
   );
