@@ -3,6 +3,7 @@ import { Col, Row, Navbar, Container, Nav } from 'react-bootstrap';
 import { useState } from 'react';
 import data from './data.js';
 import { Routes, Route, Link } from 'react-router-dom';
+import Detail from './Detail.js';
 
 function App() {
   let [books] = useState(data);
@@ -33,7 +34,7 @@ function App() {
             </>
           }
         />
-        <Route path='/detail' element={<div>디테일</div>} />
+        <Route path='/detail' element={<Detail />} />
         <Route path='/about' element={<div>어바웃페이지</div>} />
       </Routes>
     </div>
