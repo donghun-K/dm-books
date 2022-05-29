@@ -11,3 +11,8 @@
 .book-img {
   width: 10rem;
 }
+
+.book-img,
+.book-name {
+  cursor: pointer;
+}

@@ -10,11 +10,7 @@ function Detail(props) {
     <Container>
       <Row>
         <Col md='6'>
-          <img
-            src='http://image.yes24.com/goods/109711067/XL'
-            width='100%'
-            alt='book-img'
-          />
+          <img src={book.src} width='100%' alt='book-img' />
         </Col>
         <Col md='6'>
           <h4>{book.title}</h4>

@@ -8,7 +8,7 @@ import Card from './components/Card.js';
 
 function App() {
   let [books] = useState(data);
-  let navigate = useNavigate();
+  let nav = useNavigate();
   return (
     <div className='App'>
       <Navbar bg='dark' variant='dark'>
@@ -17,14 +17,14 @@ function App() {
           <Nav className='me-auto'>
             <Nav.Link
               onClick={() => {
-                navigate('/');
+                nav('/');
               }}
             >
               Home
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate('/event');
+                nav('/event');
               }}
             >
               Event
@@ -41,7 +41,7 @@ function App() {
               <Container className='book-container'>
                 <Row className='book-row'>
                   {books.map((book, i) => {
-                    return <Card book={book} key={i} />;
+                    return <Card book={book} id={i} key={i} />;
                   })}
                 </Row>
               </Container>
