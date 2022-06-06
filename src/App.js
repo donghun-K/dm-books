@@ -13,7 +13,14 @@ function App() {
     <div className='App'>
       <Navbar bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='/'>DM BOOKS</Navbar.Brand>
+          <Navbar.Brand
+            href='javascript:void(0)'
+            onClick={() => {
+              nav('/');
+            }}
+          >
+            DM BOOKS
+          </Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link
               onClick={() => {
