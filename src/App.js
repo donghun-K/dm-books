@@ -4,6 +4,7 @@ import { useState } from 'react';
 import data from './data.js';
 import { Routes, Route, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './routes/Detail.js';
+import Cart from './routes/Cart.js';
 import Card from './components/Card.js';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Navbar bg='dark' variant='dark'>
         <Container>
           <Navbar.Brand
-            href='javascript:void(0)'
+            style={{ cursor: 'pointer' }}
             onClick={() => {
               nav('/');
             }}
@@ -57,6 +58,7 @@ function App() {
         />
         {/* url parameter */}
         <Route path='/detail/:id' element={<Detail books={books} />} />
+        <Route path='/cart' element={<Cart />} />
         {/* nested route */}
         <Route
           path='/event'
