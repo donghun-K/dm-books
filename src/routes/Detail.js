@@ -1,6 +1,6 @@
 import { Col, Row, Container, Nav } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Detail(props) {
   let { id } = useParams();
@@ -8,9 +8,17 @@ function Detail(props) {
     return book.id === Number(id);
   });
   let [tab, setTab] = useState(0);
-
+  let [fade, setFade] = useState('');
+  useEffect(() => {
+    setTimeout(() => {
+      setFade('end');
+    }, 100);
+    return () => {
+      setFade('');
+    };
+  }, []);
   return (
-    <Container>
+    <Container className={`start ${fade}`}>
       <Row>
         <Col md='6'>
           <img src={book.src} width='100%' alt='book-img' />
@@ -54,7 +62,20 @@ function Detail(props) {
 }
 
 function TabContent({ tab }) {
-  return [<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tab];
+  let [fade, setFade] = useState('');
+  useEffect(() => {
+    setTimeout(() => {
+      setFade('end');
+    }, 100);
+    return () => {
+      setFade('');
+    };
+  }, [tab]);
+  return (
+    <div className={`start ${fade}`}>
+      {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tab]}
+    </div>
+  );
 }
 
 export default Detail;
