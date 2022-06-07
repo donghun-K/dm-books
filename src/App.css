@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .main-banner {
   height: 300px;
   background-image: url('./img/bg.png');
@@ -7,14 +12,33 @@
 
 .book-container {
   text-align: center;
+  padding: 5rem 0;
 }
-.book-img {
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card-img-box {
   width: 10rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-img {
+  width: 100%;
 }
 
-.book-img,
-.book-name {
+.card-img,
+.card-name {
   cursor: pointer;
+}
+
+.card-name {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .start {
