@@ -48,7 +48,9 @@
   overflow: hidden;
   white-space: nowrap;
 }
-
+.card-name:hover {
+  text-decoration: underline;
+}
 .detail-container {
   padding: 3rem 0;
 }
