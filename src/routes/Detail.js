@@ -18,7 +18,7 @@ function Detail(props) {
     };
   }, []);
   return (
-    <Container className={`start ${fade}`}>
+    <Container className={`detail-container start ${fade}`}>
       <Row>
         <Col md='6'>
           <img src={book.src} width='100%' alt='book-img' />

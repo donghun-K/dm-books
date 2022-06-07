@@ -12,13 +12,17 @@
 
 .book-container {
   text-align: center;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 .card-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+.card-container:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
 }
 .card-img-box {
   width: 10rem;
@@ -37,8 +41,16 @@
 }
 
 .card-name {
+  width: 20rem;
   font-size: 1.5rem;
   font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.detail-container {
+  padding: 3rem 0;
 }
 
 .start {
