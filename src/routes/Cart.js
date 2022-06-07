@@ -22,20 +22,20 @@ function Cart() {
           {cart.map((data, i) => {
             return (
               <tr key={i}>
-                <td>{i + 1}</td>
-                <td>{data['name']}</td>
-                <td>{data['count']}</td>
+                <td>{data.id}</td>
+                <td>{data.name}</td>
+                <td>{data.count}</td>
                 <td>
                   <button
                     onClick={() => {
-                      dispatch(plusCount(i));
+                      dispatch(plusCount(data.id));
                     }}
                   >
                     +
                   </button>
                   <button
                     onClick={() => {
-                      dispatch(minusCount(i));
+                      dispatch(minusCount(data.id));
                     }}
                   >
                     -

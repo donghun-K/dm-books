@@ -8,10 +8,18 @@ let cart = createSlice({
   ],
   reducers: {
     plusCount(state, action) {
-      state[action.payload].count++;
+      let item = state.find((item) => {
+        return item.id === action.payload;
+      });
+      item.count++;
     },
     minusCount(state, action) {
-      state[action.payload].count--;
+      let item = state.find((item) => {
+        return item.id === action.payload;
+      });
+      if (item.count > 0) {
+        item.count--;
+      }
     },
   },
 });
