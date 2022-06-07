@@ -1,6 +1,6 @@
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { plusCount, minusCount } from './../store/cartSlice.js';
+import { plusCount, minusCount, removeItem } from './../store/cartSlice.js';
 
 function Cart() {
   let cart = useSelector((state) => {
@@ -12,10 +12,10 @@ function Cart() {
       <Table>
         <thead>
           <tr>
-            <th>#</th>
+            <th>상품 ID</th>
             <th>상품명</th>
             <th>수량</th>
-            <th>변경하기</th>
+            <th>항목 삭제</th>
           </tr>
         </thead>
         <tbody>
@@ -24,7 +24,6 @@ function Cart() {
               <tr key={i}>
                 <td>{data.id}</td>
                 <td>{data.name}</td>
-                <td>{data.count}</td>
                 <td>
                   <button
                     onClick={() => {
@@ -33,12 +32,22 @@ function Cart() {
                   >
                     +
                   </button>
+                  {data.count}
                   <button
                     onClick={() => {
                       dispatch(minusCount(data.id));
                     }}
                   >
                     -
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      dispatch(removeItem(data.id));
+                    }}
+                  >
+                    삭제
                   </button>
                 </td>
               </tr>
