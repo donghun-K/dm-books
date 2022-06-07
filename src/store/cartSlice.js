@@ -21,9 +21,23 @@ let cart = createSlice({
         item.count--;
       }
     },
+    updateCart(state, action) {
+      let item = state.find((item) => {
+        return item.id === action.payload.id;
+      });
+      if (item === undefined) {
+        state.push({
+          id: action.payload.id,
+          name: action.payload.title,
+          count: 1,
+        });
+      } else {
+        item.count++;
+      }
+    },
   },
 });
 
-export let { plusCount, minusCount } = cart.actions;
+export let { plusCount, minusCount, updateCart } = cart.actions;
 
 export default cart;

@@ -1,6 +1,8 @@
 import { Col, Row, Container, Nav } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { updateCart } from './../store/cartSlice.js';
+import { useDispatch } from 'react-redux';
 
 function Detail(props) {
   let { id } = useParams();
@@ -9,6 +11,8 @@ function Detail(props) {
   });
   let [tab, setTab] = useState(0);
   let [fade, setFade] = useState('');
+  let dispatch = useDispatch();
+  let nav = useNavigate();
   useEffect(() => {
     setTimeout(() => {
       setFade('end');
@@ -27,7 +31,15 @@ function Detail(props) {
           <h4>{book.title}</h4>
           <p>{book.content}</p>
           <p>{book.price}</p>
-          <button className='btn btn-danger'>주문하기</button>
+          <button
+            onClick={() => {
+              dispatch(updateCart(book));
+              nav('/cart');
+            }}
+            className='btn btn-danger'
+          >
+            주문하기
+          </button>
         </Col>
       </Row>
       <Nav variant='tabs' defaultActiveKey='link0'>
