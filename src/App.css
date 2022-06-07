@@ -54,7 +54,15 @@
 .detail-container {
   padding: 3rem 0;
 }
-
+.cart-table-align_center {
+  text-align: center;
+}
+.cart-btn {
+  cursor: pointer;
+}
+.cart-count {
+  user-select: none;
+}
 .start {
   opacity: 0;
 }

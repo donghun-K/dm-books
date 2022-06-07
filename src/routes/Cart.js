@@ -1,6 +1,12 @@
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { plusCount, minusCount, removeItem } from './../store/cartSlice.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faX,
+  faCirclePlus,
+  faCircleMinus,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Cart() {
   let cart = useSelector((state) => {
@@ -18,43 +24,52 @@ function Cart() {
         </colgroup>
         <thead>
           <tr>
-            <th scope='col'>상품 ID</th>
+            <th className='cart-table-align_center' scope='col'>
+              상품 ID
+            </th>
             <th scope='col'>상품명</th>
-            <th scope='col'>수량</th>
-            <th scope='col'>항목 삭제</th>
+            <th className='cart-table-align_center' scope='col'>
+              수량
+            </th>
+            <th className='cart-table-align_center' scope='col'>
+              항목 삭제
+            </th>
           </tr>
         </thead>
         <tbody>
           {cart.map((data, i) => {
             return (
               <tr key={i}>
-                <td>{data.id}</td>
+                <td className='cart-table-align_center'>{data.id}</td>
                 <td>{data.name}</td>
-                <td>
-                  <button
+                <td className='cart-table-align_center'>
+                  <span
                     onClick={() => {
                       dispatch(plusCount(data.id));
                     }}
+                    className='cart-btn cart-count-btn'
                   >
-                    +
-                  </button>
-                  {data.count}
-                  <button
+                    <FontAwesomeIcon icon={faCirclePlus} />
+                  </span>
+                  <span className='cart-count'>{` ${data.count} `}</span>
+                  <span
                     onClick={() => {
                       dispatch(minusCount(data.id));
                     }}
+                    className='cart-btn cart-count-btn'
                   >
-                    -
-                  </button>
+                    <FontAwesomeIcon icon={faCircleMinus} />
+                  </span>
                 </td>
-                <td>
-                  <button
+                <td className='cart-table-align_center'>
+                  <span
                     onClick={() => {
                       dispatch(removeItem(data.id));
                     }}
+                    className='cart-btn cart-count-btn'
                   >
-                    삭제
-                  </button>
+                    <FontAwesomeIcon icon={faX} />
+                  </span>
                 </td>
               </tr>
             );
