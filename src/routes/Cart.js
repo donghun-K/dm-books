@@ -1,6 +1,6 @@
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { plusCount, minusCount } from './../store.js';
+import { plusCount, minusCount } from './../store/cartSlice.js';
 
 function Cart() {
   let cart = useSelector((state) => {
