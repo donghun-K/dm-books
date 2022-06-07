@@ -10,12 +10,18 @@ function Cart() {
   return (
     <div>
       <Table>
+        <colgroup>
+          <col width='15%' />
+          <col width='40%' />
+          <col width='25%' />
+          <col width='10%' />
+        </colgroup>
         <thead>
           <tr>
-            <th>상품 ID</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>항목 삭제</th>
+            <th scope='col'>상품 ID</th>
+            <th scope='col'>상품명</th>
+            <th scope='col'>수량</th>
+            <th scope='col'>항목 삭제</th>
           </tr>
         </thead>
         <tbody>
