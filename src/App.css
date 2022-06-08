@@ -15,6 +15,8 @@
   padding: 3rem 0;
 }
 .card-container {
+  width: 17rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,8 +43,8 @@
 }
 
 .card-name {
-  width: 20rem;
-  font-size: 1.5rem;
+  width: 15rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
