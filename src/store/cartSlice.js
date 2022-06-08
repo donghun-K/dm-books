@@ -17,8 +17,9 @@ let cart = createSlice({
       let item = state.find((item) => {
         return item.id === action.payload;
       });
-      if (item.count > 0) {
+      if (item.count > 1) {
         item.count--;
+      // 남은 수량이 1일 때 minusCount를 호출했을 경우 항목 삭제
       } else {
         // 같은 slice의 함수를 호출하기 위해 caseReducers 사용
         cart.caseReducers.removeItem(state, item.id);
