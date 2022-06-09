@@ -24,7 +24,7 @@ function Card(props) {
         >
           {props.book['title']}
         </h4>
-        <p className='card-description'>{props.book['content']}</p>
+        <p className='card-desc'>{props.book['content']}</p>
       </div>
     </Col>
   );

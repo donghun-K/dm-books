@@ -31,23 +31,38 @@ function Detail(props) {
 
   return (
     <Container className={`detail-container start ${fade}`}>
-      <Row>
-        <Col md='6'>
+      <Row className='detail-row'>
+        <Col md='5'>
           <img src={book.src} width='100%' alt='book-img' />
         </Col>
-        <Col md='6'>
-          <h4>{book.title}</h4>
-          <p>{book.content}</p>
-          <p>{book.price}</p>
-          <button
-            onClick={() => {
-              dispatch(updateCart(book));
-              nav('/cart');
-            }}
-            className='btn btn-danger'
-          >
-            주문하기
-          </button>
+        <Col md='5' className='detail-info'>
+          <div className='detail-title_box'>
+            <h4 className='detail-title'>{book.title}</h4>
+            <p className='detail-desc'>{book.content}</p>
+          </div>
+          <h5 className='detail-price'>{book.price}</h5>
+
+          <div className='detail-btn_box'>
+            <input type='number' min='1' max='5'></input>
+            <button
+              onClick={() => {
+                dispatch(updateCart(book));
+                nav('/cart');
+              }}
+              className='btn btn-danger'
+            >
+              주문하기
+            </button>
+            <button
+              onClick={() => {
+                dispatch(updateCart(book));
+                nav('/cart');
+              }}
+              className='btn btn-danger'
+            >
+              장바구니 담기
+            </button>
+          </div>
         </Col>
       </Row>
       <Nav variant='tabs' defaultActiveKey='link0'>

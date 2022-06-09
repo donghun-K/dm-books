@@ -41,7 +41,6 @@
 .card-name {
   cursor: pointer;
 }
-
 .card-name {
   width: 15rem;
   font-size: 1.2rem;
@@ -53,8 +52,27 @@
 .card-name:hover {
   text-decoration: underline;
 }
+.card-desc {
+  color: grey;
+}
 .detail-container {
   padding: 3rem 0;
+}
+.detail-row {
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.detail-title {
+  font-weight: bold;
+}
+.detail-desc {
+  color: grey;
 }
 .cart-table-align_center {
   text-align: center;
