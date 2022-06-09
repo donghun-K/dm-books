@@ -3,17 +3,22 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { updateCart } from './../store/cartSlice.js';
 import { useDispatch } from 'react-redux';
+import { addWatched } from './../store/watchedSlice.js';
 
 function Detail(props) {
   let { id } = useParams();
   let book = props.books.find((book) => {
     return book.id === Number(id);
   });
+
   let [tab, setTab] = useState(0);
   let [fade, setFade] = useState('');
+
   let dispatch = useDispatch();
+
   let nav = useNavigate();
   useEffect(() => {
+    dispatch(addWatched(book.id));
     setTimeout(() => {
       setFade('end');
     }, 100);
@@ -21,6 +26,7 @@ function Detail(props) {
       setFade('');
     };
   }, []);
+
   return (
     <Container className={`detail-container start ${fade}`}>
       <Row>
