@@ -18,7 +18,6 @@ function Detail(props) {
 
   let nav = useNavigate();
   useEffect(() => {
-    dispatch(addWatched(book.id));
     setTimeout(() => {
       setFade('end');
     }, 100);
@@ -26,6 +25,9 @@ function Detail(props) {
       setFade('');
     };
   }, []);
+  useEffect(() => {
+    dispatch(addWatched(book.id));
+  });
 
   return (
     <Container className={`detail-container start ${fade}`}>
