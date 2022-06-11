@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/bookstore-react-practice/static/css/main.4fbf5cdd.css",
-    "main.js": "/bookstore-react-practice/static/js/main.9f46b160.js",
-    "static/js/787.23170c61.chunk.js": "/bookstore-react-practice/static/js/787.23170c61.chunk.js",
-    "static/media/bg.png": "/bookstore-react-practice/static/media/bg.29aef393fd9c3726723d.png",
-    "index.html": "/bookstore-react-practice/index.html",
-    "main.4fbf5cdd.css.map": "/bookstore-react-practice/static/css/main.4fbf5cdd.css.map",
-    "main.9f46b160.js.map": "/bookstore-react-practice/static/js/main.9f46b160.js.map",
-    "787.23170c61.chunk.js.map": "/bookstore-react-practice/static/js/787.23170c61.chunk.js.map"
+    "main.css": "/dm-books/static/css/main.b32ab118.css",
+    "main.js": "/dm-books/static/js/main.55af1272.js",
+    "static/js/787.23170c61.chunk.js": "/dm-books/static/js/787.23170c61.chunk.js",
+    "static/media/bg.png": "/dm-books/static/media/bg.29aef393fd9c3726723d.png",
+    "index.html": "/dm-books/index.html",
+    "main.b32ab118.css.map": "/dm-books/static/css/main.b32ab118.css.map",
+    "main.55af1272.js.map": "/dm-books/static/js/main.55af1272.js.map",
+    "787.23170c61.chunk.js.map": "/dm-books/static/js/787.23170c61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fbf5cdd.css",
-    "static/js/main.9f46b160.js"
+    "static/css/main.b32ab118.css",
+    "static/js/main.55af1272.js"
   ]
 }
