@@ -1,7 +1,7 @@
 {
   "name": "shop",
   "version": "0.1.0",
-  "homepage": "https://donghun-K.github.io/bookstore-react-practice",
+  "homepage": "https://donghun-K.github.io/dm-books",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
