@@ -2,10 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 let cart = createSlice({
   name: 'cart',
-  initialState: [
-    { id: 0, name: '개발자가 되기 위해 꼭 알아야 하는 IT 용어', count: 2 },
-    { id: 2, name: '만들면서 배우는 파이썬과 40개의 작품들', count: 1 },
-  ],
+  initialState: [],
   reducers: {
     plusCount(state, action) {
       let item = state.find((item) => {
@@ -19,7 +16,7 @@ let cart = createSlice({
       });
       if (item.count > 1) {
         item.count--;
-      // 남은 수량이 1일 때 minusCount를 호출했을 경우 항목 삭제
+        // 남은 수량이 1일 때 minusCount를 호출했을 경우 항목 삭제
       } else {
         // 같은 slice의 함수를 호출하기 위해 caseReducers 사용
         cart.caseReducers.removeItem(state, item.id);
