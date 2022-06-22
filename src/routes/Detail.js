@@ -43,10 +43,15 @@ function Detail(props) {
           <h5 className='detail-price'>{book.price}</h5>
 
           <div className='detail-btn_box'>
-            <input type='number' min='1' max='5'></input>
+            <input
+              className='detail-input'
+              type='number'
+              min='1'
+              max='5'
+            ></input>
             <button
               onClick={() => {
-                dispatch(updateCart(book));
+                dispatch(updateCart([book, 1]));
                 nav('/cart');
               }}
               className='btn btn-danger'
@@ -55,7 +60,8 @@ function Detail(props) {
             </button>
             <button
               onClick={() => {
-                dispatch(updateCart(book));
+                let quantity = document.querySelector('.detail-input').value;
+                dispatch(updateCart([book, quantity]));
                 nav('/cart');
               }}
               className='btn btn-danger'

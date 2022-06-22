@@ -1,3 +1,4 @@
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { createSlice } from '@reduxjs/toolkit';
 
 let cart = createSlice({
@@ -23,19 +24,21 @@ let cart = createSlice({
       }
     },
     updateCart(state, action) {
+      let book = action.payload[0];
+      let quantity = action.payload[1];
       let item = state.find((item) => {
-        return item.id === action.payload.id;
+        return item.id === book.id;
       });
       // cart에 동일한 상품이 존재하지 않는 경우
       if (item === undefined) {
         state.push({
-          id: action.payload.id,
-          name: action.payload.title,
-          count: 1,
+          id: book.id,
+          name: book.title,
+          count: quantity,
         });
         // cart에 이미 동일한 상품이 존재하는 경우
       } else {
-        item.count++;
+        item.count = Number(item.count) + Number(quantity);
       }
     },
     removeItem(state, id) {
