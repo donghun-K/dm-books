@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/dm-books/static/css/main.b32ab118.css",
-    "main.js": "/dm-books/static/js/main.55af1272.js",
+    "main.js": "/dm-books/static/js/main.1ca237c1.js",
     "static/js/787.23170c61.chunk.js": "/dm-books/static/js/787.23170c61.chunk.js",
     "static/media/bg.png": "/dm-books/static/media/bg.29aef393fd9c3726723d.png",
     "index.html": "/dm-books/index.html",
     "main.b32ab118.css.map": "/dm-books/static/css/main.b32ab118.css.map",
-    "main.55af1272.js.map": "/dm-books/static/js/main.55af1272.js.map",
+    "main.1ca237c1.js.map": "/dm-books/static/js/main.1ca237c1.js.map",
     "787.23170c61.chunk.js.map": "/dm-books/static/js/787.23170c61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b32ab118.css",
-    "static/js/main.55af1272.js"
+    "static/js/main.1ca237c1.js"
   ]
 }
