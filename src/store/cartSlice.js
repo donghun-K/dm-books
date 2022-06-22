@@ -1,4 +1,3 @@
-import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { createSlice } from '@reduxjs/toolkit';
 
 let cart = createSlice({
